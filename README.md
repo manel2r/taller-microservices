@@ -24,7 +24,7 @@ Característiques :
 Framework web (Minimalista) i extremadament ràpid per a desenvolupament web sobre NODEJS.
 
 
-```javascript
+```bash
 {
     "_id" : "57037ae071df3738ecf2b4d7",
     "companyId" : 102,
