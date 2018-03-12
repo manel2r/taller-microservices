@@ -21,21 +21,21 @@ Els microserveis són serveis (Funcionalitat concreta instanciada en un servidor
 ## Restful Webservices
 REST (Representational State Transfer) és una arquitectura de programari pensada per sistemes distribuïts basats en hipermèdia, com ara el web (...) s'aprofita el protocol **HTTP** per tal de desenvolupar aplicacions distribuïdes. (Via viquipèdia)
 
-### Verbs http?
+### Verbs http
 #### GET
+
 HTTP GET http://www.appdomain.com/users
+
 Per demanar informació
-Si OK-> 200 (OK)
-Si KO-> 404 (Not / Found No troba el servei)
-Si KO-> 400 (Bad request // No ho estem cridant bé i falla)
-Si KO-> 401 (Unauthorized//No autoritzat)
-Si KO-> 403 (Unauthorized // No permet l'accés)
-Si KO-> 500 (Internal Error // Error del servei)
+
 
 #### POST
 HTTP POST http://www.appdomain.com/users
 
-BODY
+Per insertar informació
+
+BODY -> Cos de l'enviament normalment s'envia en JSON
+
 ```javascript
 {
     "_id" : "57037ae071df3738ecf2b4d7",
@@ -47,3 +47,12 @@ BODY
     "updatedAt" : { "$date" : 1457014037417 }
   }
 ```
+
+### Codis de retorn
+
+Si OK-> 200 (OK)
+Si KO-> 404 (Not / Found No troba el servei)
+Si KO-> 400 (Bad request // No ho estem cridant bé i falla)
+Si KO-> 401 (Unauthorized//No autoritzat)
+Si KO-> 403 (Unauthorized // No permet l'accés)
+Si KO-> 500 (Internal Error // Error del servei)
