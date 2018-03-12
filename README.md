@@ -1,5 +1,5 @@
 # Taller de Microserveis
-## STEP 1 // NODEJS
+## STEP 1 // NODEJS // EXPRESSJS
 
 ### NODEJS
 Entorn d'execució per a JavaScript.
@@ -17,6 +17,11 @@ Característiques :
 5. Lleuger i Eficient
 
 [LINK a la pàgina de nodejs](https://www.nodejs.org)
+
+**PER TAL DE REALITZAR LA PRÀCTICA S'HAURÀ DE DESCARREGAR I INTAL.LAR EN LOCAL EL NODEJS**
+
+### EXPRESS JS
+Framework web (Minimalista) i extremadament ràpid per a desenvolupament web sobre NODEJS.
 
 
 ```javascript
