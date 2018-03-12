@@ -33,10 +33,17 @@ Si KO-> 403 (Unauthorized // No permet l'accés)
 Si KO-> 500 (Internal Error // Error del servei)
 
 #### POST
-HTTP GET http://www.appdomain.com/users
-Per insertar informació
 HTTP POST http://www.appdomain.com/users
+
 BODY
 ```javascript
-{ "_id" : "57037ae071df3738ecf2b4d7", "companyId" : 102, "name" : "Owen Convey", "age" : 29, "location" : "Barcelona", "createdAt" : { "$date" : 1457009690129 }, "updatedAt" : { "$date" : 1457014037417 } }
+{
+    "_id" : "57037ae071df3738ecf2b4d7",
+    "companyId" : 102,
+    "name" : "Owen Convey",
+    "age" : 29,
+    "location" : "Barcelona",
+    "createdAt" : { "$date" : 1457009690129 },
+    "updatedAt" : { "$date" : 1457014037417 }
+  }
 ```
