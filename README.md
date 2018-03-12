@@ -12,3 +12,8 @@ Els microserveis són serveis (Funcionalitat concreta instanciada en un servidor
 
 ### Exemple Arquitectura basada en Microserveis
 ![Exemple Arquitectura Microserveis](https://github.com/manel2r/taller-microservices/blob/master/resources/example2.png)
+
+1. Usuari demana informació de les películes noves que es projecten a la ciutat on es troba. GET/catalog/<<cityid>>
+2. Aquesta informació es reclama a un servei web (No deixa de ser una funcionalitat allotjada a un servidor web o un servei cloud com AMAZON) en aquest cas a CINEMA CATALOG.
+3. El servei cinema catalog accedeix a la BD que té al seu server i extreu la informació de les películes.
+4. El servei cinema catalog reclama informació a un altre servei extern (Un altra funcionalitat allotjada possiblement a un altre server) per extreure quines son les "premieres" i poder enviar-li al usuari del catàleg que té quines son les "premiere//noves".
