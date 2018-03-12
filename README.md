@@ -25,14 +25,7 @@ Framework web (Minimalista) i extremadament ràpid per a desenvolupament web sob
 
 
 ```bash
-{
-    "_id" : "57037ae071df3738ecf2b4d7",
-    "companyId" : 102,
-    "name" : "Owen Convey",
-    "age" : 29,
-    "location" : "Barcelona",
-
-  }
+mkdir apiserver
 ```
 
 #### DELETE
