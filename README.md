@@ -50,9 +50,9 @@ BODY -> Cos de l'enviament normalment s'envia en JSON
 
 ### Codis de retorn
 
-Si OK-> 200 (OK)
-Si KO-> 404 (Not / Found No troba el servei)
-Si KO-> 400 (Bad request // No ho estem cridant bé i falla)
-Si KO-> 401 (Unauthorized//No autoritzat)
-Si KO-> 403 (Unauthorized // No permet l'accés)
-Si KO-> 500 (Internal Error // Error del servei)
+* Si OK-> 200 (OK)
+* Si KO-> 404 (Not / Found No troba el servei)
+* Si KO-> 400 (Bad request // No ho estem cridant bé i falla)
+* Si KO-> 401 (Unauthorized//No autoritzat)
+* Si KO-> 403 (Unauthorized // No permet l'accés)
+* Si KO-> 500 (Internal Error // Error del servei)
