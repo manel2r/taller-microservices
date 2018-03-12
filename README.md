@@ -16,7 +16,7 @@ Característiques :
 4. Orientat a esdeveniments (Peticions Http)
 5. Lleuger i Eficient
 
-
+[LINK a la pàgina de nodejs](https://www.nodejs.org)
 
 
 ```javascript
