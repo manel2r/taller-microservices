@@ -10,6 +10,5 @@ Els microserveis són serveis (Funcionalitat concreta instanciada en un servidor
 3. Oculten els detalls de la implememtació (Només solen exposar adreces http amb el verb http adequat)-> http://api.repcamp,com/products (GET)
 4. Permeten la creació de programes complexos mitjatçant la combinació dels mateixos els quals poden ser propis o creats per un tercer (Exemple: Api de Facebook).
 
-*Exemple arquitectura basada en Microserveis:*
-
-![Exemple Arquitectura Microserveis](https://github.com/manel2r/taller-microservices/blob/master/resources/api.png)
+### Exemple Arquitectura basada en Microserveis
+![Exemple Arquitectura Microserveis](https://github.com/manel2r/taller-microservices/blob/master/resources/example2.png)
