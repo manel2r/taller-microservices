@@ -24,7 +24,7 @@ Característiques :
 Framework web (Minimalista) i extremadament ràpid per a desenvolupament web sobre NODEJS.
 
 
-```bash
+```Shell
 mkdir apiserver
 ```
 
