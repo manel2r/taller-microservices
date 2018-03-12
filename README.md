@@ -42,13 +42,36 @@ BODY -> Cos de l'enviament normalment s'envia en JSON
     "companyId" : 102,
     "name" : "Owen Convey",
     "age" : 29,
-    "location" : "Barcelona",
-    "createdAt" : { "$date" : 1457009690129 },
-    "updatedAt" : { "$date" : 1457014037417 }
+    "location" : "Barcelona"
   }
 ```
 
-### Codis de retorn
+#### PUT
+HTTP PUT http://www.appdomain.com/users/57037ae071df3738ecf2b4d7
+
+Per modificar informació d'un registre
+
+BODY -> Cos de l'enviament normalment s'envia en JSON
+
+```javascript
+{
+    "_id" : "57037ae071df3738ecf2b4d7",
+    "companyId" : 102,
+    "name" : "Owen Convey",
+    "age" : 29,
+    "location" : "Barcelona",
+
+  }
+```
+
+#### DELETE
+HTTP DELETE http://www.appdomain.com/users/57037ae071df3738ecf2b4d7
+
+Per esborrar un registre
+
+
+
+### Codis de retorn http
 
 * Si OK-> 200 (OK)
 * Si OK-> 201 (OK-> Creat els registres)
@@ -57,3 +80,4 @@ BODY -> Cos de l'enviament normalment s'envia en JSON
 * Si KO-> 401 (Unauthorized//No autoritzat)
 * Si KO-> 403 (Unauthorized // No permet l'accés)
 * Si KO-> 500 (Internal Error // Error del servei)
+...
