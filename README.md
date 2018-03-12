@@ -50,3 +50,6 @@ Guardar i engegar el servidor:
 ```Shell
 $ node server.js
 ```
+Realitzar el test del servei utilitzant l'aplicació Postman:
+
+https://www.getpostman.com
