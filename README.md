@@ -1,5 +1,5 @@
 # Taller de Microserveis
-## STEP 1 // NODEJS // EXPRESSJS
+## NODEJS // EXPRESSJS
 
 ### NODEJS
 Entorn d'execució per a JavaScript.
@@ -23,25 +23,30 @@ Característiques :
 ### EXPRESS JS
 Framework web (Minimalista) i extremadament ràpid per a desenvolupament web sobre NODEJS.
 
+[LINK a la pàgina d'Expressjs](https://expressjs.com/)
+
+## STEP 1 // Incialització del projecte NODEJS // EXPRESS
+```Shell
+$ mkdir apiserver
+$ cd apiserver
+$ npm init
+ --> entry point: (server.js)
+$ npm install express --save
+```
+## STEP 1 // Hola Món NodeJS
+
+Crear el fitxer "server.js" i afegir el codi següent:
+
+```JavaScript
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hola Món!'))
+
+app.listen(3000, () => console.log('ApiServer escoltant el port 3000!'))
+```
+Guardar i engegar el servidor:
 
 ```Shell
-mkdir apiserver
+$ node server.js
 ```
-
-#### DELETE
-HTTP DELETE http://www.appdomain.com/users/57037ae071df3738ecf2b4d7
-
-Per esborrar un registre
-
-
-
-### Codis de retorn http
-
-* Si OK-> 200 (OK)
-* Si OK-> 201 (OK-> Creat els registres)
-* Si KO-> 404 (Not / Found No troba el servei)
-* Si KO-> 400 (Bad request // No ho estem cridant bé i falla)
-* Si KO-> 401 (Unauthorized//No autoritzat)
-* Si KO-> 403 (Unauthorized // No permet l'accés)
-* Si KO-> 500 (Internal Error // Error del servei)
-...
