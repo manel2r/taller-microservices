@@ -1,5 +1,5 @@
 # Taller de Microserveis
-## STEP 5 // COS D'UNA PETICIÓ (Request) HTTP (INSERTS I UPDATES)
+## STEP 5 // COS D'UNA PETICIÓ (Request) HTTP (INSERT)
 
 ### El cos d'un petició HTTP i tractament en ExpresJs
 
@@ -9,65 +9,46 @@
 
 #### Un sol objecte -> Típic enviament d'un put genèric o un post
 ```JavaScript
-{ "id":"jaimerich", "nom":"Joan", "cognom":"Aimerich", "edat":42,"mail":"jaimerich@gmail.com"}
+  { "id":"01129", "descripcio":"Realitzar demo de producte TecnoCampus", "propietari":"pvalmanya", "estat":0}
 ```
-#### Array d'objectes -> Típica resposta d'un get genèric contra un recurs
-```JavaScript
-[
-    { "id":"jaimerich", "nom":"Joan", "cognom":"Aimerich", "edat":42,"mail":"jaimerich@gmail.com"},
-    { "id":"meixarch", "nom":"Manel", "cognom":"Eixarch", "edat":35,"mail":"meixarch@gmail.com"},
-    { "id":"pvalmanya", "nom":"Pere", "cognom":"Valmanya", "edat":53,"mail":"pvalmanya@gmail.com"},
-    { "id":"tperez", "nom":"Tomás", "cognom":"Pérez", "edat":36,"mail":"tperez@gmail.com"},
+### SERVEI POST DE TASQUES
 
-]
+### Instal.lar les següents dependències-> Executar:
+
+```Shell
+npm install body-parser --save
+npm install multer --save
 ```
-
-### CREACIÓ D'OBJECTES JAVASCRIPT DE TEST PER ALS NOSTRES SERVEIS
-#### Objecte Tasca
-```JavaScript
-  { "id":"01122", "descripcio":"Trucar a SGM SL per parlar de la nova tarifa", "propietari":"manel2r", "estat":0}
-```
-
-### Creació del fitxer data.json amb les següents dades:
+### Afegir les dependències al programa server.js
 
 ```JavaScript
-[
-  { "id":"01122", "descripcio":"Trucar a SGM SL per parlar de la nova tarifa", "propietari":"meixarch", "estat":0},
-  { "id":"01124", "descripcio":"Re-definir tasques obertes", "propietari":"jaimerich", "estat":0},
-  { "id":"01125", "descripcio":"Cercar info sobre els productes competència", "propietari":"jaimenrich", "estat":1},
-  { "id":"01126", "descripcio":"Tancar oprtunitats obertes", "propietari":"jaimerich", "estat":0},
-  { "id":"01127", "descripcio":"Enviar correu amb aclaracions de la comanda perduda a Ramom Bassols de Amer", "propietari":"pvalmanya", "estat":0}
-]
+var bodyParser = require('body-parser');
+var multer = require('multer'); // v1.0.5
+var upload = multer(); // for parsing multipart/form-data
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 ```
-### SERVEIS GET DE TASQUES
+
 ### Modificar el programa server.js
 
-**Afegir sota "const app = express()":**
+**Afegir la funció addTasca":**
 
 ```JavaScript
-var llistatTasques = require('./data.json');
-
-function findTasquesByUserID(userId) {
-  return llistatTasques.filter(x => x.propietari === userId);
+function addTasca(tasca) {
+  llistatTasques.push(tasca);
 }
 
 ```
-Això ens carregarà les dades del data.json a la variable llistaTasques.
-La funció FindTasquesByUserID retorna l'array de tasques que pertany a un usuari
 
-**Modificar els 2 serveis GET de tasques per deixar-los de la següent forma**
+**Modificar el servei POST per tal d'afegir la tasca":**
 
 ```JavaScript
-
-app.get('/tasques', function (req, res) {
-  res.send(llistatTasques);
+app.post('/tasques', function (req, res) {
+  addTasca(req.body)
+  console.log(req.body)
+  res.send(req.body)
 })
-
-app.get('/tasques/:userId', function (req, res) {
-  res.send(findTasquesByUserID(req.params.userId))
-})
-
 ```
 
 ### Realtzar el test amb Postman
