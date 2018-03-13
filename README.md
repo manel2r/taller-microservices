@@ -5,7 +5,7 @@
 
 ### Cos d'una petició HTTP
 
-![Exemple Cos d'una petició](https://github.com/manel2r/taller-microservices/blob/master/resources/screenshot2.png)
+![Exemple Cos d'una petició](https://github.com/manel2r/taller-microservices/blob/step5/resources/screenshot2.png)
 
 #### Un sol objecte -> Típic enviament d'un put genèric o un post
 ```JavaScript
