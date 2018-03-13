@@ -22,7 +22,7 @@ app.get('/tasques', function (req, res) {
 
 ```JavaScript
 app.get('/tasques/:userId', function (req, res) {
-  res.send('Preparat per a enviar les tasques del usuari' + req.params.userId)
+  res.send('Preparat per a enviar les tasques del usuari ' + req.params.userId)
 })
 ```
 ```JavaScript
@@ -37,13 +37,13 @@ app.post('/tasques', function (req, res) {
 })
 ```
 ```JavaScript
-app.put('/tasques/:tascaID', function (req, res) {
-  res.send('Preparat per a modificar la tasca '+ request.params.tascaId)
+app.put('/tasques/:tascaId', function (req, res) {
+  res.send('Preparat per a modificar la tasca '+ req.params.tascaId)
 })
 ```
 ```JavaScript
-app.delete('/tasques/tascaId', function (req, res) {
-  res.send('Preparat per a esborrar la tasca ' + request.params.tascaId)
+app.delete('/tasques/:tascaId', function (req, res) {
+  res.send('Preparat per a esborrar la tasca ' + req.params.tascaId)
 })
 ```
 

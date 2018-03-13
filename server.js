@@ -20,12 +20,12 @@ app.post('/tasques', function (req, res) {
   res.send('Preparat per a insertar una tasca')
 })
 
-app.put('/tasques/:tascaID', function (req, res) {
-  res.send('Preparat per a modificar la tasca '+ request.params.tascaId)
+app.put('/tasques/:tascaId', function (req, res) {
+  res.send('Preparat per a modificar la tasca '+ req.params.tascaId)
 })
 
-app.delete('/tasques/tascaId', function (req, res) {
-  res.send('Preparat per a esborrar la tasca ' + request.params.tascaId)
+app.delete('/tasques/:tascaId', function (req, res) {
+  res.send('Preparat per a esborrar la tasca ' + req.params.tascaId)
 })
 
 
