@@ -1,10 +1,26 @@
 # Taller de Microserveis
-## STEP 3 // Creació d'una API rest (II)
+## STEP 4 // JSON // Javascript Object Notation
 
-### Enrutament avançat en EXPRESS JS
-https://expressjs.com/en/guide/routing.html
+### JSON
+JSON (acrònim de JavaScript Object Notation) és un estàndard obert basat en text dissenyat per a intercanvi de dades llegible per humans. Deriva del llenguatge script JavaScript, per a representar estructures de dades simples i llistes associatives, anomenades objectes. (Via viquipèdia)
 
-### Pas de paràmetres
+### Exemples de JSON
+
+#### Un sol objecte -> Típic enviament d'un put genèric o un post
+```JavaScript
+{ "id":"jaimerich", "nom":"Joan", "cognom":"Aimerich", "edat":42,"mail":"jaimerich@gmail.com"}
+```
+#### Array d'objectes -> Típica resposta d'un get genèric contra un recurs
+```JavaScript
+[
+    { "id":"jaimerich", "nom":"Joan", "cognom":"Aimerich", "edat":42,"mail":"jaimerich@gmail.com"},
+    { "id":"meixarch", "nom":"Manel", "cognom":"Eixarch", "edat":35,"mail":"meixarch@gmail.com"},
+    { "id":"pvalmanya", "nom":"Pere", "cognom":"Valmanya", "edat":53,"mail":"pvalmanya@gmail.com"},
+    { "id":"tperez", "nom":"Tomás", "cognom":"Pérez", "edat":36,"mail":"tperez@gmail.com"},
+
+]
+```
+
 
 Path de la ruta: /tasques/:userId
 Request URL: http://localhost:3000/tasques/manel2r
