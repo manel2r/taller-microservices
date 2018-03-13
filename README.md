@@ -1,33 +1,49 @@
 # Taller de Microserveis
-## STEP 2 // Creació d'una API rest
+## STEP 3 // Creació d'una API rest (II)
 
-### Enrutament en EXPRESS JS
-Com crear un servei que respongui a una crida http en un verb en concret utilitzant EXPRESSJS
+### Enrutament avançat en EXPRESS JS
+https://expressjs.com/en/guide/routing.html
 
-```JavaScript
-app.METHOD(PATH, HANDLER)
-```
+### Pas de paràmetres
+
+Path de la ruta: /tasques/:userId
+Request URL: http://localhost:3000/tasques/manel2r
+req.params: { "userId": "manel2r"}
+
+Normalment les accions de cerca d'un element, esborrat i modificació inclouen un paràmetre amb l'ID que es vol tractar.
 
 ### Modificar el programa anterior i afegir el codi seguent
 
 ```JavaScript
 app.get('/tasques', function (req, res) {
-  res.send('Preparat per a enviar tasques')
+  res.send('Preparat per a enviar totes les tasques')
 })
 ```
+
+```JavaScript
+app.get('/tasques/:userId', function (req, res) {
+  res.send('Preparat per a enviar les tasques del usuari' + req.params.userId)
+})
+```
+```JavaScript
+app.get('/tasques/:userId/:tascaId', function (req, res) {
+  res.send('Preparat per a enviar la tasca ' + req.params.tascaId + ' del usuari ' + req.params.userId)
+})
+```
+
 ```JavaScript
 app.post('/tasques', function (req, res) {
   res.send('Preparat per a insertar una tasca')
 })
 ```
 ```JavaScript
-app.put('/tasques', function (req, res) {
-  res.send('Preparat per a modificar una tasca')
+app.put('/tasques/:tascaID', function (req, res) {
+  res.send('Preparat per a modificar la tasca '+ request.params.tascaId)
 })
 ```
 ```JavaScript
-app.delete('/tasques', function (req, res) {
-  res.send('Preparat per a esborrar una tasca')
+app.delete('/tasques/tascaId', function (req, res) {
+  res.send('Preparat per a esborrar la tasca ' + request.params.tascaId)
 })
 ```
 
