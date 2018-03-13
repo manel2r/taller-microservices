@@ -1,10 +1,11 @@
 # Taller de Microserveis
-## STEP 4 // JSON // Javascript Object Notation
+## STEP 5 // COS D'UNA PETICIÓ (Request) HTTP (INSERTS I UPDATES)
 
-### JSON
-JSON (acrònim de JavaScript Object Notation) és un estàndard obert basat en text dissenyat per a intercanvi de dades llegible per humans. Deriva del llenguatge script JavaScript, per a representar estructures de dades simples i llistes associatives, anomenades objectes. (Via viquipèdia)
+### El cos d'un petició HTTP i tractament en ExpresJs
 
-### Exemples de JSON
+### Cos d'una petició HTTP
+
+![Exemple Cos d'una petició](https://github.com/manel2r/taller-microservices/blob/master/resources/screenshot2.png)
 
 #### Un sol objecte -> Típic enviament d'un put genèric o un post
 ```JavaScript
