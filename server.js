@@ -15,6 +15,11 @@ function findTasquesByUserID(userId) {
   return llistatTasques.filter(x => x.propietari === userId);
 }
 
+function updateTasca(idTasca, tasca){
+  var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca);
+  llistatTasques[indexTrobat] = tasca;
+}
+
 function addTasca(tasca) {
   llistatTasques.push(tasca);
 }
@@ -42,7 +47,9 @@ app.post('/tasques', function (req, res) {
 })
 
 app.put('/tasques/:tascaId', function (req, res) {
-  res.send('Preparat per a modificar la tasca '+ req.params.tascaId)
+  updateTasca(req.params.tascaId,req.body);
+  console.log(req.body)
+  res.send(req.body)
 })
 
 app.delete('/tasques/:tascaId', function (req, res) {
