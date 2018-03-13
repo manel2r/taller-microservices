@@ -1,15 +1,22 @@
 const express = require('express')
 const app = express()
 
+var llistatTasques = require('./data.json');
+
+function findTasquesByUserID(userId) {
+  return llistatTasques.filter(x => x.propietari === userId);
+}
+
 app.get('/', (req, res) => res.send('Hola Món!'))
 
 
 app.get('/tasques', function (req, res) {
-  res.send('Preparat per a enviar totes les tasques')
+
+  res.send(llistatTasques);
 })
 
 app.get('/tasques/:userId', function (req, res) {
-  res.send('Preparat per a enviar les tasques del usuari ' + req.params.userId)
+  res.send(findTasquesByUserID(req.params.userId))
 })
 
 app.get('/tasques/:userId/:tascaId', function (req, res) {

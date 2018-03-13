@@ -21,46 +21,52 @@ JSON (acrònim de JavaScript Object Notation) és un estàndard obert basat en t
 ]
 ```
 
+### CREACIÓ D'OBJECTES JAVASCRIPT DE TEST PER ALS NOSTRES SERVEIS
+#### Objecte Tasca
+```JavaScript
+  { "id":"01122", "descripcio":"Trucar a SGM SL per parlar de la nova tarifa", "propietari":"manel2r", "estat":0}
+```
 
-Path de la ruta: /tasques/:userId
-Request URL: http://localhost:3000/tasques/manel2r
-req.params: { "userId": "manel2r"}
-
-Normalment les accions de cerca d'un element, esborrat i modificació inclouen un paràmetre amb l'ID que es vol tractar.
-
-### Modificar el programa anterior i afegir el codi seguent
+### Creació del fitxer data.json amb les següents dades:
 
 ```JavaScript
+[
+  { "id":"01122", "descripcio":"Trucar a SGM SL per parlar de la nova tarifa", "propietari":"meixarch", "estat":0},
+  { "id":"01124", "descripcio":"Re-definir tasques obertes", "propietari":"jaimerich", "estat":0},
+  { "id":"01125", "descripcio":"Cercar info sobre els productes competència", "propietari":"jaimenrich", "estat":1},
+  { "id":"01126", "descripcio":"Tancar oprtunitats obertes", "propietari":"jaimerich", "estat":0},
+  { "id":"01127", "descripcio":"Enviar correu amb aclaracions de la comanda perduda a Ramom Bassols de Amer", "propietari":"pvalmanya", "estat":0}
+]
+
+```
+### SERVEIS GET DE TASQUES
+### Modificar el programa server.js
+
+**Afegir sota "const app = express()":**
+
+```JavaScript
+var llistatTasques = require('./data.json');
+
+function findTasquesByUserID(userId) {
+  return llistatTasques.filter(x => x.propietari === userId);
+}
+
+```
+Això ens carregarà les dades del data.json a la variable llistaTasques.
+La funció FindTasquesByUserID retorna l'array de tasques que pertany a un usuari
+
+**Modificar els 2 serveis GET de tasques per deixar-los de la següent forma**
+
+```JavaScript
+
 app.get('/tasques', function (req, res) {
-  res.send('Preparat per a enviar totes les tasques')
+  res.send(llistatTasques);
 })
-```
 
-```JavaScript
 app.get('/tasques/:userId', function (req, res) {
-  res.send('Preparat per a enviar les tasques del usuari ' + req.params.userId)
+  res.send(findTasquesByUserID(req.params.userId))
 })
-```
-```JavaScript
-app.get('/tasques/:userId/:tascaId', function (req, res) {
-  res.send('Preparat per a enviar la tasca ' + req.params.tascaId + ' del usuari ' + req.params.userId)
-})
-```
 
-```JavaScript
-app.post('/tasques', function (req, res) {
-  res.send('Preparat per a insertar una tasca')
-})
-```
-```JavaScript
-app.put('/tasques/:tascaId', function (req, res) {
-  res.send('Preparat per a modificar la tasca '+ req.params.tascaId)
-})
-```
-```JavaScript
-app.delete('/tasques/:tascaId', function (req, res) {
-  res.send('Preparat per a esborrar la tasca ' + req.params.tascaId)
-})
 ```
 
 ### Realtzar el test amb Postman
