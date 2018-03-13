@@ -9,7 +9,7 @@ app.get('/tasques', function (req, res) {
 })
 
 app.get('/tasques/:userId', function (req, res) {
-  res.send('Preparat per a enviar les tasques del usuari' + req.params.userId)
+  res.send('Preparat per a enviar les tasques del usuari ' + req.params.userId)
 })
 
 app.get('/tasques/:userId/:tascaId', function (req, res) {
