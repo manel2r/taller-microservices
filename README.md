@@ -2,30 +2,34 @@
 ## STEP 2 // Creació d'una API rest
 
 ### Enrutament en EXPRESS JS
-Entorn d'execució per a JavaScript.
-
-Anteriorment, els desenvolupadors de JavaScript només podien utilitzar aquest llenguatge amb l'obligació d'utilitzar un navegador web ja sigui Firefox, Chrome, entre d'altres. El que ocasionava que es tingués una limitació a l'hora de realitzar cert tipus d'aplicacions.
-
-
-[LINK a la pàgina de nodejs](https://www.nodejs.org)
-
-
+Com crear un servei que respongui a una crida http en un verb en concret utilitzant EXPRESSJS
 
 ```JavaScript
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => res.send('Hola Món!'))
-
-app.listen(3000, () => console.log('ApiServer escoltant el port 3000!'))
+app.METHOD(PATH, HANDLER)
 ```
-Guardar i engegar el servidor:
 
-```Shell
-$ node server.js
+### Modificar el programa anterior i afegir el codi seguent
+
+```JavaScript
+app.get('/tasques', function (req, res) {
+  res.send('Preparat per a enviar tasques')
+})
 ```
-Realitzar el test del servei utilitzant l'aplicació Postman:
+```JavaScript
+app.post('/tasques', function (req, res) {
+  res.send('Preparat per a insertar una tasca')
+})
+```
+```JavaScript
+app.put('/tasques', function (req, res) {
+  res.send('Preparat per a modificar una tasca')
+})
+```
+```JavaScript
+app.delete('/tasques', function (req, res) {
+  res.send('Preparat per a esborrar una tasca')
+})
+```
 
+### Realtzar el test amb Postman
 https://www.getpostman.com
-
-![Postman](https://github.com/manel2r/taller-microservices/blob/step1/resources/screenshot2.png)
