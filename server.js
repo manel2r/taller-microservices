@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 var llistatTasques = require('./data.json');
 
 function findTasquesByUserID(userId) {
-  return llistatTasques.filter(x => x.propietari === userId);
+  return llistatTasques.filter(x => x.propietari === userId)
 }
 
 function updateTasca(idTasca, tasca){
@@ -21,7 +21,12 @@ function updateTasca(idTasca, tasca){
 }
 
 function addTasca(tasca) {
-  llistatTasques.push(tasca);
+  llistatTasques.push(tasca)
+}
+
+function deleteTasca(idTasca) {
+  var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca)
+  llistatTasques.splice(indexTrobat,1)
 }
 
 app.get('/', (req, res) => res.send('Hola Món!'))
@@ -53,7 +58,8 @@ app.put('/tasques/:tascaId', function (req, res) {
 })
 
 app.delete('/tasques/:tascaId', function (req, res) {
-  res.send('Preparat per a esborrar la tasca ' + req.params.tascaId)
+  deleteTasca(req.params.tascaId)
+  res.send('Tasca :' + req.params.tascaId +' esborrada')
 })
 
 
