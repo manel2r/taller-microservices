@@ -29,3 +29,5 @@ Realitzar el test del servei utilitzant l'aplicació Postman:
 https://www.getpostman.com
 
 ![Postman](https://github.com/manel2r/taller-microservices/blob/step1/resources/screenshot2.png)
+
+TEst
