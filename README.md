@@ -47,7 +47,23 @@ https://www.mongodb.com/download-center#community
 En el nostre cas obrirem una instàcia gratuita al núbol a:
 https://mlab.com
 
-![Postman](https://github.com/manel2r/taller-microservices/blob/step8/resources/step1.png)
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step1.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step2.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step3.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step4.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step5.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step6.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step7.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step8.png)
+
+![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step9.png)
 
 ### STEP 8
 a
