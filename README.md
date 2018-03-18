@@ -9,7 +9,7 @@ Per als que vulguin aprendre més la companyia rera mongodb ofereix una sèrie d
 
 https://university.mongodb.com
 
-##Activitats adicionals (Opcionals)
+## Activitats adicionals (Opcionals)
 
 * Crear un servei per a la inserció multiple de documents -> POST /tasques/bulk
 * Crear un servei per a la borrat multiple de documents -> PUT /tasques/bulk
