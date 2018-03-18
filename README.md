@@ -1,7 +1,8 @@
 # Taller de Microserveis
-## STEP 8 // BASES DE DADES NO-SQL
-Una base de dades NoSQL proporciona un mecanisme per emmagatzemar i recuperar dades que es modela mitjançant sistemes de clau-valor (diccionari- REDIS), document (JSON-MONGODB), etc.Aquest canvi de model està motivat per la simplicitat de disseny, l'escalabilitat horitzontal i un major control de la disponibilitat. (Via viquipèdia)
-
+## STEP 9// ACCËS A LA BD MONGODB
+### Afegim l'usauri d'acés a la BD via mLab.
+Usuari:Admin -> Password:Test
+![Afegir_usuari](https://github.com/manel2r/taller-microservices/blob/step9/resources/adduser.gif)
 
 ### BASE DE DADES ORIENTADA A DOCUMENT (JSON) - MONGODB
 La base de dades gestiona col·leccions de documents amb format de dades JSON. Això permet que moltes aplicacions basades en JavaScript puguin gestionar les dades de manera més natural (indexació, consulta, inserció, etc).(Via viquipèdia)
