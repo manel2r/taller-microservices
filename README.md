@@ -79,33 +79,4 @@ Finalment tenin la colel.lecció creada de "tasques".
 { "id":"01127", "descripcio":"Enviar correu amb aclaracions de la comanda perduda a Ramom Bassols de Amer", "propietari":"pvalmanya", "estat":0}
 ```
 ![Afegir_tasca](https://github.com/manel2r/taller-microservices/blob/step8/resources/savedoc.gif)
-
-Alta a mlab
-
-To connect using the mongo shell:
-mongo ds115749.mlab.com:15749/taskapp -u <dbuser> -p <dbpassword>
-To connect using a driver via the standard MongoDB URI (what's this?):
-
-
-
-**Afegir la funció deleteTasca":**
-
-```JavaScript
-function deleteTasca(idTasca) {
-  var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca)
-  llistatTasques.splice(indexTrobat,1)
-}
-
-```
-
-**Modificar el servei DELETE per tal d'esborrar la tasca":**
-
-```JavaScript
-app.delete('/tasques/:tascaId', function (req, res) {
-  deleteTasca(req.params.tascaId)
-  res.send('Tasca :' + req.params.tascaId +' esborrada')
-})
-```
-
-### Realtzar el test amb Postman
-https://www.getpostman.com
+## Fet això anem a modificar el nostre server per treballar amb la BD NOSQL MongoDb remota.
