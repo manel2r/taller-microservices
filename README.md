@@ -1,28 +1,19 @@
 # Taller de Microserveis
-## STEP 13// Eliminació d'un objecte a MongoDB
+## STEP 14// CRUD en MongoDb
 
-### Substituïr la funció deleteTasca per la següent:
+MongoDb disposa de moltíssimes funcion més. Podeu trobar tota la informació a:
 
-```JavaScript
-var deleteTasca = function(db, idTasca, callback) {
-    var collection = db.collection('tasques')
-    var query = {}
-    query.id = idTasca
-    // Insert a single document
-    collection.deleteOne(query, function(err, r) {
-            callback(r);
-    })
-}
-```
+http://mongodb.github.io/node-mongodb-native/3.0/tutorials/crud/
 
-### Substituïr la ruta delete per aquesta:
+Per als que vulguin aprendre més la companyia rera mongodb ofereix una sèrie de cursos gratuïts a:
 
-```JavaScript
-app.delete('/tasques/:tascaId', function (req, res) {
-  deleteTasca(db,req.params.tascaId, function(resultat){
-      res.send(resultat);
-  });
-})
-```
+https://university.mongodb.com
 
-### Fem el test amb els postman localhost:3000/tasques/:codi amb un delete
+##Activitats adicionals (Opcionals)
+
+* Crear un servei per a la inserció multiple de documents -> POST /tasques/bulk
+* Crear un servei per a la borrat multiple de documents -> PUT /tasques/bulk
+
+Podeu trobar la informació a:
+
+http://mongodb.github.io/node-mongodb-native/3.0/tutorials/crud/
