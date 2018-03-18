@@ -68,13 +68,15 @@ var addTasca = function(db, tasca, callback) {
     })
 }
 
-
-function deleteTasca(idTasca) {
-  var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca)
-  llistatTasques.splice(indexTrobat,1)
+var deleteTasca = function(db, idTasca, callback) {
+    var collection = db.collection('tasques')
+    var query = {}
+    query.id = idTasca
+    // Insert a single document
+    collection.deleteOne(query, function(err, r) {
+            callback(r);
+    })
 }
-
-
 
 app.get('/', (req, res) => res.send('Hola Món!'))
 
@@ -109,8 +111,10 @@ app.put('/tasques/:tascaId', function (req, res) {
 })
 
 app.delete('/tasques/:tascaId', function (req, res) {
-  deleteTasca(req.params.tascaId)
-  res.send('Tasca :' + req.params.tascaId +' esborrada')
+  deleteTasca(db,req.params.tascaId, function(resultat){
+      res.send(resultat);
+  });
+
 })
 
 
