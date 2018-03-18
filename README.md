@@ -4,12 +4,12 @@
 ### Substituïr la funció deleteTasca per la següent:
 
 ```JavaScript
-var updateTasca = function(db, idTasca, tasca, callback) {
+var deleteTasca = function(db, idTasca, callback) {
     var collection = db.collection('tasques')
     var query = {}
     query.id = idTasca
     // Insert a single document
-    collection.updateOne(query, {$set: tasca}, function(err, r) {
+    collection.deleteOne(query, function(err, r) {
             callback(r);
     })
 }
@@ -18,8 +18,8 @@ var updateTasca = function(db, idTasca, tasca, callback) {
 ### Substituïr la ruta delete per aquesta:
 
 ```JavaScript
-app.put('/tasques/:tascaId', function (req, res) {
-  updateTasca(db,req.params.tascaId,req.body, function(resultat){
+app.delete('/tasques/:tascaId', function (req, res) {
+  deleteTasca(db,req.params.tascaId, function(resultat){
       res.send(resultat);
   });
 })
