@@ -63,7 +63,7 @@ Posem el nom de la base de dades (**posem -> taskapp**)
 Ens apareixerà un deployment amb la base de dades que acaben de crear
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step6.png)
 #### Creem la col.leció tasques
-Ens apareixerà un deployment amb la base de dades que acaben de crear.
+Si polsem sobre la instància ens portarà a la pantalla de gestió de la BD
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step7.png)
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step8.png)
