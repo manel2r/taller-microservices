@@ -67,10 +67,19 @@ Si polsem sobre la instància ens portarà a la pantalla de gestió de la BD
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step7.png)
 Polsem sobre add collection i creem la col.lecció -> **tasques** (IMPORTANT MiNÚSCULES).
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step8.png)
-
+Finalment tenin la colel.lecció creada de "tasques".
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step9.png)
+#### Afegim una a una les tasques del arxiu data.json.
 
-### STEP 8
+```JavaScript
+{ "id":"01122", "descripcio":"Trucar a SGM SL per parlar de la nova tarifa", "propietari":"meixarch", "estat":0}
+{ "id":"01124", "descripcio":"Re-definir tasques obertes", "propietari":"jaimerich", "estat":0}
+{ "id":"01125", "descripcio":"Cercar info sobre els productes competència", "propietari":"jaimenrich", "estat":1}
+{ "id":"01126", "descripcio":"Tancar oprtunitats obertes", "propietari":"jaimerich", "estat":0}
+{ "id":"01127", "descripcio":"Enviar correu amb aclaracions de la comanda perduda a Ramom Bassols de Amer", "propietari":"pvalmanya", "estat":0}
+```
+[Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/savedoc.gif)
+
 Alta a mlab
 
 To connect using the mongo shell:
