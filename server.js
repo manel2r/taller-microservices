@@ -54,9 +54,6 @@ function updateTasca(idTasca, tasca){
   llistatTasques[indexTrobat] = tasca;
 }
 
-function addTasca(tasca) {
-  llistatTasques.push(tasca)
-}
 
 var addTasca = function(db, tasca, callback) {
     var collection = db.collection('tasques')
