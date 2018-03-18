@@ -71,7 +71,6 @@ Polsem sobre add collection i creem la col.lecció -> **tasques** (IMPORTANT MiN
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step9.png)
 
 ### STEP 8
-a
 Alta a mlab
 
 To connect using the mongo shell:
