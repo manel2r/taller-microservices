@@ -76,11 +76,9 @@ app.get('/tasques', function (req, res) {
 })
 
 app.get('/tasques/:userId', function (req, res) {
-
   findTasquesByUserId(db,req.params.userId, function(docs){
       res.send(docs);
   });
-
 })
 
 app.get('/tasques/:userId/:tascaId', function (req, res) {
