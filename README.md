@@ -1,7 +1,7 @@
 # Taller de Microserveis
-## STEP 12// Modificació d'un objecte a MongoDB
+## STEP 13// Eliminació d'un objecte a MongoDB
 
-### Substituïr la funció updateTasca per la següent:
+### Substituïr la funció deleteTasca per la següent:
 
 ```JavaScript
 var updateTasca = function(db, idTasca, tasca, callback) {
@@ -15,7 +15,7 @@ var updateTasca = function(db, idTasca, tasca, callback) {
 }
 ```
 
-### Substituïr la ruta put per aquesta:
+### Substituïr la ruta delete per aquesta:
 
 ```JavaScript
 app.put('/tasques/:tascaId', function (req, res) {
@@ -25,4 +25,4 @@ app.put('/tasques/:tascaId', function (req, res) {
 })
 ```
 
-### Fem el test amb els postman localhost:3000/tasques/:codi amb un PUT posant al body un objecte amb dades parcials {"descripcio":"Visita Kriter Software"}.
+### Fem el test amb els postman localhost:3000/tasques/:codi amb un delete
