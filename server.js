@@ -49,9 +49,14 @@ var findTasquesByUserId = function(db,userId, callback) {
 var llistatTasques = require('./data.json');
 
 
-function updateTasca(idTasca, tasca){
-  var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca);
-  llistatTasques[indexTrobat] = tasca;
+var updateTasca = function(db, idTasca, tasca, callback) {
+    var collection = db.collection('tasques')
+    var query = {}
+    query.idTasca = idTasca
+    // Insert a single document
+    collection.updateOne(query, {$set: tasca}, function(err, r) {
+            callback(r);
+    })
 }
 
 
@@ -98,9 +103,9 @@ app.post('/tasques', function (req, res) {
 })
 
 app.put('/tasques/:tascaId', function (req, res) {
-  updateTasca(req.params.tascaId,req.body);
-  console.log(req.body)
-  res.send(req.body)
+  addTasca(db,req.params.tascaId,req.body, function(resultat){
+      res.send(resultat);
+  });
 })
 
 app.delete('/tasques/:tascaId', function (req, res) {
