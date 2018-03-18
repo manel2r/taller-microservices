@@ -52,7 +52,7 @@ var llistatTasques = require('./data.json');
 var updateTasca = function(db, idTasca, tasca, callback) {
     var collection = db.collection('tasques')
     var query = {}
-    query.idTasca = idTasca
+    query.id = idTasca
     // Insert a single document
     collection.updateOne(query, {$set: tasca}, function(err, r) {
             callback(r);
