@@ -65,7 +65,7 @@ Ens apareixerà un deployment amb la base de dades que acaben de crear
 #### Creem la col.leció tasques
 Si polsem sobre la instància ens portarà a la pantalla de gestió de la BD
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step7.png)
-
+Polsem sobre add collection i creem la col.lecció -> **tasques** (IMPORTANT MiNÚSCULES).
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step8.png)
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step9.png)
