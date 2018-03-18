@@ -1,5 +1,5 @@
 # Taller de Microserveis
-## STEP 10// Alta d'un objecte
+## STEP 10// Alta d'un objecte a MongoDB
 
 ### Substituïr la funció addTasca per la següent:
 
