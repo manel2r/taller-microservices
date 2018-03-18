@@ -9,6 +9,35 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 
+
+var MongoClient = require('mongodb').MongoClient;
+
+var url = 'mongodb://admin:test@ds115749.mlab.com:15749/taskapp';
+var db = null
+
+
+MongoClient.connect(url, function(err, client){
+    if (err) throw err;
+    // console.log("it is working");
+    // db.close();
+    db = client.db('taskapp')
+
+})
+
+var findTasques = function(db, callback) {
+    var collection = db.collection('tasques');
+
+    collection.find().toArray(function(err,tasques){
+        if (err) throw err;
+        console.log(tasques);
+        callback(tasques);
+    })
+
+}
+
+
+
+
 var llistatTasques = require('./data.json');
 
 function findTasquesByUserID(userId) {
@@ -29,12 +58,16 @@ function deleteTasca(idTasca) {
   llistatTasques.splice(indexTrobat,1)
 }
 
+
+
 app.get('/', (req, res) => res.send('Hola Món!'))
 
 
 app.get('/tasques', function (req, res) {
+  findTasques(db, function(docs){
+      res.send(llistatTasques);
+  });
 
-  res.send(llistatTasques);
 })
 
 app.get('/tasques/:userId', function (req, res) {
