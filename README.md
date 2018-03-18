@@ -53,6 +53,8 @@ https://mlab.com
 
 Després de validar l'account (Accedint la vostre correu i polsant al link del correu que us han enviat).
 #### Crear un deployment nou (Màquina a un servidor al núbol amb MONGODB)
+Triem AMAZON com a servei cloud i SANDBOX (Pla gratuït)
+
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step3.png)
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step4.png)
