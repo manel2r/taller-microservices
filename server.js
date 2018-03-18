@@ -65,7 +65,7 @@ app.get('/', (req, res) => res.send('Hola Món!'))
 
 app.get('/tasques', function (req, res) {
   findTasques(db, function(docs){
-      res.send(llistatTasques);
+      res.send(docs);
   });
 
 })
