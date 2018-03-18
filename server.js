@@ -103,7 +103,7 @@ app.post('/tasques', function (req, res) {
 })
 
 app.put('/tasques/:tascaId', function (req, res) {
-  addTasca(db,req.params.tascaId,req.body, function(resultat){
+  updateTasca(db,req.params.tascaId,req.body, function(resultat){
       res.send(resultat);
   });
 })
