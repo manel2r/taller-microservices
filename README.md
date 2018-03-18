@@ -58,7 +58,7 @@ Triem AMAZON com a servei cloud i SANDBOX (Pla gratuït)
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step3.png)
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step4.png)
-Posem el nom de la base de dades (** posem -> taskapp**)
+Posem el nom de la base de dades (**posem -> taskapp**)
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step5.png)
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step6.png)
