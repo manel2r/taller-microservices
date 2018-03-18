@@ -37,14 +37,12 @@ var findTasques = function(db, callback) {
 
 var findTasquesByUserId = function(db,userId, callback) {
     var collection = db.collection('tasques');
-    var query = null
+    var query = {}
     query.propietari = userId
     collection.find(query).toArray(function(err,tasques){
         if (err) throw err;
-        console.log(tasques);
         callback(tasques);
     })
-
 }
 
 
@@ -79,7 +77,7 @@ app.get('/tasques', function (req, res) {
 
 app.get('/tasques/:userId', function (req, res) {
 
-  findTasquesByUserID(db,req.params.userId, function(docs){
+  findTasquesByUserId(db,req.params.userId, function(docs){
       res.send(docs);
   });
 

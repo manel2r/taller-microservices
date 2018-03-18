@@ -1,41 +1,46 @@
 # Taller de Microserveis
-## STEP 9// ACCËS A LA BD MONGODB
-### Afegim l'usauri d'acés a la BD via mLab.
-Usuari:Admin -> Password:Test
-![Afegir_usuari](https://github.com/manel2r/taller-microservices/blob/step9/resources/adduser.gif)
+## STEP 10// Cerca sobre col.leccions mongodb
+### JSON QUERY
 
-### INSTAL.LEM EL MÔDUL MongoDb de NDEJS
-```Shell
-npm install mongodb --save
+Per tal de realitzar una query en mongodb s'ha de crear un objecte json amb les propietats per les que vulguem cercar dintre d'una col.lecció.
 
-```
-### Modifiquem Server.js i afegim la funció findTasques i la connexió a la base de dades
+**Exemple**
+Si volem cercar totes les tasques de jaimerich haurem de passar-li la query en json.
 
 ```JavaScript
-var MongoClient = require('mongodb').MongoClient;
+{"propietari":"jaimerich"}
+```
+Això seria l'equivalent en JavaScript a:
+```JavaScript
+var query = {}
+query.propietari = userId
+```
+Ja que com vàrem dir el JSON no deixa de ser una altra notació per definir objetes JavaScript.
 
-var url = 'mongodb://admin:test@ds115749.mlab.com:15749/taskapp';
-var db = null
+### Substituïr la funció findTasquesByUserId per la següent:
 
-
-MongoClient.connect(url, function(err, client){
-    if (err) throw err;
-    // console.log("it is working");
-    // db.close();
-    db = client.db('taskapp')
-
-})
-
-var findTasques = function(db, callback) {
+```JavaScript
+var findTasquesByUserId = function(db,userId, callback) {
     var collection = db.collection('tasques');
-
-    collection.find().toArray(function(err,tasques){
+    var query = {}
+    query.propietari = userId
+    collection.find(query).toArray(function(err,tasques){
         if (err) throw err;
-        console.log(tasques);
         callback(tasques);
     })
-
 }
-
 ```
-### Fem el test amb els postman localhost:3000/tasques/ amb un GET
+
+### Substituïr la ruta get de cerca tasques per userID per aquesta:
+
+```JavaScript
+app.get('/tasques/:userId', function (req, res) {
+
+  findTasquesByUserId(db,req.params.userId, function(docs){
+      res.send(docs);
+  });
+
+})
+```
+
+### Fem el test amb els postman localhost:3000/tasques/jaimerich amb un GET
