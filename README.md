@@ -1,21 +1,5 @@
 # Taller de Microserveis
-## STEP 10// Cerca sobre col.leccions mongodb
-### JSON QUERY
-
-Per tal de realitzar una query en mongodb s'ha de crear un objecte json amb les propietats per les que vulguem cercar dintre d'una col.lecció.
-
-**Exemple**
-Si volem cercar totes les tasques de jaimerich haurem de passar-li la query en json.
-
-```JavaScript
-{"propietari":"jaimerich"}
-```
-Això seria l'equivalent en JavaScript a:
-```JavaScript
-var query = {}
-query.propietari = userId
-```
-Ja que com vàrem dir el JSON no deixa de ser una altra notació per definir objetes JavaScript.
+## STEP 10// Alta d'un objecte
 
 ### Substituïr la funció findTasquesByUserId per la següent:
 

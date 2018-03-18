@@ -58,6 +58,15 @@ function addTasca(tasca) {
   llistatTasques.push(tasca)
 }
 
+var addTasca = function(db, tasca, callback) {
+    var collection = db.collection('tasques');
+    // Insert a single document
+    collection.insertOne({tasca, function(err, r) {
+      callback(r);
+    })
+}
+
+
 function deleteTasca(idTasca) {
   var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca)
   llistatTasques.splice(indexTrobat,1)
@@ -69,15 +78,15 @@ app.get('/', (req, res) => res.send('Hola Món!'))
 
 
 app.get('/tasques', function (req, res) {
-  findTasques(db, function(docs){
-      res.send(docs);
+  findTasques(db, function(tasques){
+      res.send(tasques);
   });
 
 })
 
 app.get('/tasques/:userId', function (req, res) {
-  findTasquesByUserId(db,req.params.userId, function(docs){
-      res.send(docs);
+  findTasquesByUserId(db,req.params.userId, function(tasques){
+      res.send(tasques);
   });
 })
 
@@ -86,9 +95,9 @@ app.get('/tasques/:userId/:tascaId', function (req, res) {
 })
 
 app.post('/tasques', function (req, res) {
-  addTasca(req.body)
-  console.log(req.body)
-  res.send(req.body)
+  addTasca(db,req.body, function(resultat){
+      res.send(resultat);
+  });  
 })
 
 app.put('/tasques/:tascaId', function (req, res) {
