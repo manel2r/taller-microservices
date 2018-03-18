@@ -35,14 +35,21 @@ var findTasques = function(db, callback) {
 
 }
 
+var findTasquesByUserId = function(db,userId, callback) {
+    var collection = db.collection('tasques');
+    var query = null
+    query.propietari = userId
+    collection.find(query).toArray(function(err,tasques){
+        if (err) throw err;
+        console.log(tasques);
+        callback(tasques);
+    })
 
+}
 
 
 var llistatTasques = require('./data.json');
 
-function findTasquesByUserID(userId) {
-  return llistatTasques.filter(x => x.propietari === userId)
-}
 
 function updateTasca(idTasca, tasca){
   var indexTrobat = llistatTasques.findIndex(x => x.id == idTasca);
@@ -65,13 +72,17 @@ app.get('/', (req, res) => res.send('Hola Món!'))
 
 app.get('/tasques', function (req, res) {
   findTasques(db, function(docs){
-      res.send(llistatTasques);
+      res.send(docs);
   });
 
 })
 
 app.get('/tasques/:userId', function (req, res) {
-  res.send(findTasquesByUserID(req.params.userId))
+
+  findTasquesByUserID(db,req.params.userId, function(docs){
+      res.send(docs);
+  });
+
 })
 
 app.get('/tasques/:userId/:tascaId', function (req, res) {
