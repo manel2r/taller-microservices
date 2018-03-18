@@ -78,7 +78,7 @@ Finalment tenin la colel.lecció creada de "tasques".
 { "id":"01126", "descripcio":"Tancar oprtunitats obertes", "propietari":"jaimerich", "estat":0}
 { "id":"01127", "descripcio":"Enviar correu amb aclaracions de la comanda perduda a Ramom Bassols de Amer", "propietari":"pvalmanya", "estat":0}
 ```
-[Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/savedoc.gif)
+![Afegir_tasca](https://github.com/manel2r/taller-microservices/blob/step8/resources/savedoc.gif)
 
 Alta a mlab
 
