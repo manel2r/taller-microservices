@@ -59,9 +59,9 @@ function addTasca(tasca) {
 }
 
 var addTasca = function(db, tasca, callback) {
-    var collection = db.collection('tasques');
+    var collection = db.collection('tasques')
     // Insert a single document
-    collection.insertOne({tasca, function(err, r) {
+    collection.insertOne(tasca, function(err, r) {
       callback(r);
     })
 }
