@@ -1,30 +1,26 @@
 # Taller de Microserveis
 ## STEP 10// Alta d'un objecte
 
-### Substituïr la funció findTasquesByUserId per la següent:
+### Substituïr la funció addTasca per la següent:
 
 ```JavaScript
-var findTasquesByUserId = function(db,userId, callback) {
-    var collection = db.collection('tasques');
-    var query = {}
-    query.propietari = userId
-    collection.find(query).toArray(function(err,tasques){
-        if (err) throw err;
-        callback(tasques);
+var addTasca = function(db, tasca, callback) {
+    var collection = db.collection('tasques')
+    // Insert a single document
+    collection.insertOne(tasca, function(err, r) {
+      callback(r);
     })
 }
 ```
 
-### Substituïr la ruta get de cerca tasques per userID per aquesta:
+### Substituïr la ruta post per aquesta:
 
 ```JavaScript
-app.get('/tasques/:userId', function (req, res) {
-
-  findTasquesByUserId(db,req.params.userId, function(docs){
-      res.send(docs);
+app.post('/tasques', function (req, res) {
+  addTasca(db,req.body, function(resultat){
+      res.send(resultat);
   });
-
 })
 ```
 
-### Fem el test amb els postman localhost:3000/tasques/jaimerich amb un GET
+### Fem el test amb els postman localhost:3000/tasques/ amb un POST posant al body un objecte (Si havíeu guardat la col.lecció tindreu el body ben informat).
