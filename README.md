@@ -51,6 +51,7 @@ https://mlab.com
 
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step2.png)
 
+Després de validar l'account (Accedint la vostre correu i polsant al link del correu que us han enviat).
 #### Crear un deployment nou (Màquina a un servidor al núbol amb MONGODB)
 ![Mlab](https://github.com/manel2r/taller-microservices/blob/step8/resources/step3.png)
 
