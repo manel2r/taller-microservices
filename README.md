@@ -1,7 +1,17 @@
 # Taller de Microserveis
-## STEP 14// CRUD en MongoDb
+## STEP 15// CORS - Cross-Origin Resource Sharing
 
-MongoDb disposa de moltíssimes funcion més. Podeu trobar tota la informació a:
+Intercanvi de recursos d'origen creuat o CORS (Cross-origin resource sharing, en les seves sigles en anglès), és un mecanisme que permet que uns serveis webs instal.lats en un domini concret (Exemple: httpp://api.apptasques.com) puguin ser sol·licitats des d'un domini diferent que allotgi una aplicació que consumeixi el servei.
+
+```Shell
+$ npm install cors
+```
+
+```JavaScript
+var cors = require('cors')
+var app = express() // COMPTE AIXÒ JA HO TENIM!!!
+app.use(cors())
+```
 
 http://mongodb.github.io/node-mongodb-native/3.0/tutorials/crud/
 
