@@ -1,0 +1,34 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "global": "app.global.js",
+  "core": "app.rvygenxh.js",
+  "corePolyfilled": "app.wvpwed9b.js",
+  "components": {
+    "app-home": {
+      "$": "tvc2glkv"
+    },
+    "app-profile": {
+      "$": "loettoy3"
+    },
+    "app-task-condensed": {
+      "$": "xkvzfwqd"
+    },
+    "app-welcome": {
+      "$": "szueophp"
+    },
+    "my-app": {
+      "$": "jqozwxmk"
+    },
+    "stencil-route": {
+      "$": "jqozwxmk"
+    },
+    "stencil-route-link": {
+      "$": "tvc2glkv"
+    },
+    "stencil-router": {
+      "$": "jqozwxmk"
+    }
+  }
+}

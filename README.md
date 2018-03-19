@@ -1,10 +1,13 @@
 # Taller de Microserveis
-## STEP 15// CORS - Cross-Origin Resource Sharing
+## STEP 15// CORS - Cross-Origin Resource Sharing i creació de consumidors de serveis
 
 Intercanvi de recursos d'origen creuat o CORS (Cross-origin resource sharing, en les seves sigles en anglès), és un mecanisme que permet que uns serveis webs instal.lats en un domini concret (Exemple: httpp://api.apptasques.com) puguin ser sol·licitats des d'un domini diferent que allotgi una aplicació que consumeixi el servei.
 
+
+## Realitzem els canvis a l'app per tal de que sigui accedida desde CORS
+
 ```Shell
-$ npm install cors
+$ npm install cors --save
 ```
 
 ```JavaScript
@@ -13,17 +16,25 @@ var app = express() // COMPTE AIXÒ JA HO TENIM!!!
 app.use(cors())
 ```
 
-http://mongodb.github.io/node-mongodb-native/3.0/tutorials/crud/
+Amb aquest canvis ja pot ser accedit desde un altra aplicació desde un domini diferent.
 
-Per als que vulguin aprendre més la companyia rera mongodb ofereix una sèrie de cursos gratuïts a:
+## Servei de contingut static amb express
 
-https://university.mongodb.com
 
-## Activitats adicionals (Opcionals)
+Per a la publicació de fitxers estàtics com ara imatges, fitxers CSS i JavaScript, utilitzeu la funció express.static integrada de middleware en Express.
 
-* Crear un servei per a la inserció multiple de documents -> POST /tasques/bulk
-* Crear un servei per a la borrat multiple de documents -> PUT /tasques/bulk
+L'argument arrel especifica el directori arrel del qual serveix els arxius estàtics.
 
-Podeu trobar la informació a:
+per exemple, utilitzeu el codi següent per a servir imatges, fitxers CSS i fitxers de JavaScript en un directori anomenat públic:
 
-http://mongodb.github.io/node-mongodb-native/3.0/tutorials/crud/
+```JavaScript
+app.use(express.static('public'))
+```
+### Crear el fitxer client.js
+```JavaScript
+const express = require('express')
+const app = express()
+app.use(express.static('public'))
+app.listen(3200, () => console.log('Client escoltant el port 3200!'))
+```
+### Crear el directori "public" al arrel,crear un arxiu index.html dintre de "public"

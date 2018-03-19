@@ -1,5 +1,10 @@
 const express = require('express')
+
+var cors = require('cors')
+
 const app = express()
+
+app.use(cors())
 
 var bodyParser = require('body-parser');
 var multer = require('multer'); // v1.0.5

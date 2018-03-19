@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TEST UI KRITER</title>
+  <meta name="Description" content="TEST UI KRITER">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#16161d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+  <link rel="canonical" href="/">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="krcomponents/app.css" rel="stylesheet" title="Default Style">
+
+  <script type='text/javascript'  src='krcomponents/app.js' ></script>
+
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!--  <my-app></my-app> -->
+<div id="app">
+  <div style= "width:400px;padding:20px;">
+  <app-welcome v-bind:name="message"></app-welcome>
+
+  <div v-for="task in tasks">
+     <app-task-condensed v-bind:description="task.descripcio " date="12/12/2018 - 10:10"></app-task-condensed>
+ </div>
+ <button v-on:click="load()">Carrega de dades</button>
+
+</div>
+
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: sans-serif;
+    }
+  </style>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Manel!',
+    tasks: [{"descripcio":"Hola mundo"}]
+
+  },methods: {
+    load: function () {
+        console.log(this.message)
+            console.log(this.message)
+      axios.get('http://localhost:3000/tasques/')
+      .then(function(response) {
+        console.log(this.message)
+        console.log(response.data)
+        this.tasks = response.data
+          console.log(this.tasks)
+        });
+      }
+  }
+
+})
+
+</script>
+</body>
+</html>
