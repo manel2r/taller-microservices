@@ -44,19 +44,17 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Manel!',
-    tasks: [{"descripcio":"Hola mundo"}]
+    tasks: [{"descripcio":"Trucar a Joan"}]
 
   },methods: {
     load: function () {
         console.log(this.message)
             console.log(this.message)
-      axios.get('http://localhost:3000/tasques/')
-      .then(function(response) {
-        console.log(this.message)
-        console.log(response.data)
-        this.tasks = response.data
-          console.log(this.tasks)
-        });
+            axios.get('http://localhost:3000/tasques/').then((response) => {
+                            this.tasks = response.data
+                       });
+
+
       }
   }
 
