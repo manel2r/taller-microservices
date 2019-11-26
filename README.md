@@ -32,6 +32,7 @@ $ cd apiserver
 $ npm init
  --> entry point: (server.js)
 $ npm install express --save
+$ npm install --save multer
 ```
 ## STEP 1 // Hola Món NodeJS
 
